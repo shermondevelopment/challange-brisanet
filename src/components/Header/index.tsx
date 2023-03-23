@@ -26,7 +26,10 @@ const Header = () => {
             </li>
           </ul>
         </S.HeaderMenu>
-        <S.HeaderFigure src="man.svg" width={40} />
+        <S.HeaderFigure src="man.svg" width={40} className="man-head" />
+        <S.HeaderMenuBurguer>
+          <S.BurguerLine />
+        </S.HeaderMenuBurguer>
       </S.Content>
     </S.Header>
   )

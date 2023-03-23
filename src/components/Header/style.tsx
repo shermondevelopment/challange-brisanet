@@ -4,7 +4,13 @@ export const Header = styled.header`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 15px 20px 15px;
+
+  @media only screen and (max-width: 380px) {
+    & .man-head {
+      display: none;
+    }
+  }
 `
 export const HeaderFigure = styled.img``
 
@@ -40,12 +46,18 @@ export const HeaderMenu = styled.nav`
     border-width: 30%;
     border-color: #fff;
   }
+
+  @media only screen and (max-width: 380px) {
+    & {
+      display: none;
+    }
+  }
 `
 export const HeaderMenuBurguer = styled.div`
   width: 100%;
   max-width: 25px;
   height: 25px;
-  display: flex;
+  display: none;
   align-items: center;
   position: relative;
   cursor: pointer;
@@ -67,6 +79,12 @@ export const HeaderMenuBurguer = styled.div`
     bottom: 0;
     background: #fff;
     border-radius: 8px;
+  }
+
+  @media only screen and (max-width: 380px) {
+    & {
+      display: flex;
+    }
   }
 `
 export const BurguerLine = styled.div`
