@@ -10,14 +10,14 @@ export const MainTitle = styled.h1`
   width: 440px;
   align-self: flex-start;
 
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 415px) {
     & {
       width: 100%;
     }
   }
 `
 export const MainBanner = styled.div`
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 415px) {
     & {
       display: none;
     }
@@ -37,7 +37,7 @@ export const MainInfoContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 415px) {
     & {
       height: 300px;
     }

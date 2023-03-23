@@ -6,7 +6,7 @@ export const Header = styled.header`
   justify-content: center;
   padding: 20px 15px 20px 15px;
 
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 415px) {
     & .man-head {
       display: none;
     }
@@ -47,7 +47,7 @@ export const HeaderMenu = styled.nav`
     border-color: #fff;
   }
 
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 415px) {
     & {
       display: none;
       position: absolute;
@@ -96,7 +96,7 @@ export const HeaderMenuBurguer = styled.div`
     border-radius: 8px;
   }
 
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 415px) {
     & {
       display: flex;
     }
@@ -112,7 +112,7 @@ export const HeaderMenuClosed = styled.div`
   display: none;
   position: absolute;
 
-  @media only screen and (max-width: 380px) {
+  @media only screen and (max-width: 415px) {
     & {
       display: block;
       top: 40px;
