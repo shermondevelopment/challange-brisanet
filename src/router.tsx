@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 /* pages */
-import Commics from './pages/Commics'
+import Commics from './pages/Commics/Commics'
 import Home from './pages/Home'
 
 const Router = () => (
