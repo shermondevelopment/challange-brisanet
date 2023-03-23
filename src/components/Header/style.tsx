@@ -6,7 +6,7 @@ export const Header = styled.header`
   justify-content: center;
   padding: 20px 10px 20px 10px;
 `
-export const HeaderLogo = styled.img``
+export const HeaderFigure = styled.img``
 
 export const Content = styled.div`
   width: 100%;
@@ -25,8 +25,53 @@ export const HeaderMenu = styled.nav`
   }
   & a {
     text-decoration: none;
+    transition: border 0.3s ease-in-out;
+    border-bottom: 2px solid;
+    border-color: transparent;
   }
+
+  & a.active {
+    border-bottom: 2px solid;
+    border-color: #fff;
+  }
+
   & a:hover {
-    color: #c30414;
+    border-bottom: 2px solid;
+    border-width: 30%;
+    border-color: #fff;
   }
+`
+export const HeaderMenuBurguer = styled.div`
+  width: 100%;
+  max-width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    background: #fff;
+    border-radius: 8px;
+  }
+  &:before {
+    content: '';
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    border-radius: 8px;
+  }
+`
+export const BurguerLine = styled.div`
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  border-radius: 8px;
 `

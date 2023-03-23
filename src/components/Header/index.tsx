@@ -7,9 +7,14 @@ const Header = () => {
   return (
     <S.Header>
       <S.Content>
-        <S.HeaderLogo src="marvel.svg" width={100} />
+        <S.HeaderFigure src="marvel.svg" width={100} />
         <S.HeaderMenu>
           <ul>
+            <li>
+              <a href="#" className="active">
+                Home
+              </a>
+            </li>
             <li>
               <a href="#">COMMICS</a>
             </li>
@@ -19,11 +24,9 @@ const Header = () => {
             <li>
               <a href="#">ABOUT</a>
             </li>
-            <li>
-              <a href="#">MOVIES</a>
-            </li>
           </ul>
         </S.HeaderMenu>
+        <S.HeaderFigure src="man.svg" width={40} />
       </S.Content>
     </S.Header>
   )
