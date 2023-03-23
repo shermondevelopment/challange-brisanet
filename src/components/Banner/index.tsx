@@ -15,15 +15,15 @@ import { Content } from '../Header/style'
 /* style */
 import * as S from './style'
 
-const Main: React.FC = (): React.ReactElement => {
+const Banner: React.FC = (): React.ReactElement => {
   return (
-    <S.Main>
+    <S.Banner>
       <Content>
-        <S.MainInfo>
-          <S.MainInfoContent>
-            <S.MainTitle>
+        <S.BannerGroupTitle>
+          <S.BannerInfoContent>
+            <S.BannerTitle>
               CHAME SE HEROI FAVORITO PARA SEU ENDEREÇO.
-            </S.MainTitle>
+            </S.BannerTitle>
 
             <Link to="/commics">
               <Button type="submit">
@@ -34,14 +34,14 @@ const Main: React.FC = (): React.ReactElement => {
                 />
               </Button>
             </Link>
-          </S.MainInfoContent>
-        </S.MainInfo>
-        <S.MainBanner>
+          </S.BannerInfoContent>
+        </S.BannerGroupTitle>
+        <S.BannerArea>
           <S.Figure src="hulk.svg" width={340} />
-        </S.MainBanner>
+        </S.BannerArea>
       </Content>
-    </S.Main>
+    </S.Banner>
   )
 }
 
-export default Main
+export default Banner

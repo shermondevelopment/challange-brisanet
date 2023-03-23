@@ -2,13 +2,13 @@ import React from 'react'
 
 /* components */
 import Header from '../components/Header'
-import Main from '../components/Main'
+import Banner from '../components/Banner'
 
 const Home: React.FC = (): React.ReactElement => {
   return (
     <>
       <Header />
-      <Main />
+      <Banner />
     </>
   )
 }
