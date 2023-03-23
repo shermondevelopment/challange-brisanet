@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+/* link */
+import { Link, useLocation } from 'react-router-dom'
+
 /* icons */
 import { CgClose } from 'react-icons/cg'
 
@@ -7,6 +10,10 @@ import { CgClose } from 'react-icons/cg'
 import * as S from './style'
 
 const Header = () => {
+  const path = useLocation()
+
+  console.log(path)
+
   const [menuMobile, setMenuMobile] = useState(false)
 
   return (
@@ -19,18 +26,28 @@ const Header = () => {
           </S.HeaderMenuClosed>
           <ul>
             <li>
-              <a href="#" className="active">
+              <Link to="/" className={`${path.pathname === '/' && 'active'}`}>
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#">COMMICS</a>
+              <Link
+                to="/commics"
+                className={`${path.pathname == '/commics' && 'active'}`}
+              >
+                COMMICS
+              </Link>
             </li>
             <li>
-              <a href="#">MAPS</a>
+              <Link
+                to="/maps"
+                className={`${path.pathname == '/maps' && 'active'}`}
+              >
+                MAPA
+              </Link>
             </li>
             <li>
-              <a href="#">ABOUT</a>
+              <Link to="/about">SOBRE</Link>
             </li>
           </ul>
         </S.HeaderMenu>
