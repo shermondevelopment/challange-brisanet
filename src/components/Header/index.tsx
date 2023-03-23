@@ -13,7 +13,7 @@ const Header = () => {
     <S.Header>
       <S.Content>
         <S.HeaderFigure src="marvel.svg" width={100} />
-        <S.HeaderMenu style={{ display: menuMobile ? 'flex' : 'none' }}>
+        <S.HeaderMenu className={`${menuMobile && 'mobile'}`}>
           <S.HeaderMenuClosed onClick={() => setMenuMobile(false)}>
             <CgClose size={30} />
           </S.HeaderMenuClosed>
@@ -35,7 +35,10 @@ const Header = () => {
           </ul>
         </S.HeaderMenu>
         <S.HeaderFigure src="man.svg" width={40} className="man-head" />
-        <S.HeaderMenuBurguer onClick={() => setMenuMobile(!menuMobile)}>
+        <S.HeaderMenuBurguer
+          onClick={() => setMenuMobile(!menuMobile)}
+          className={``}
+        >
           <S.BurguerLine />
         </S.HeaderMenuBurguer>
       </S.Content>

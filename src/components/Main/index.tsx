@@ -1,4 +1,9 @@
 import React from 'react'
+
+/* link */
+import { Link } from 'react-router-dom'
+
+/* components */
 import Button from '../Button'
 
 /* icons */
@@ -19,14 +24,20 @@ const Main: React.FC = (): React.ReactElement => {
             <S.MainTitle>
               CHAME SE HEROI FAVORITO PARA SEU ENDEREÇO.
             </S.MainTitle>
-            <Button type="submit">
-              Solicitar Heroi
-              <HiArrowSmRight size={25} style={{ background: 'transparent' }} />
-            </Button>
+
+            <Link to="/commics">
+              <Button type="submit">
+                Solicitar Heroi
+                <HiArrowSmRight
+                  size={25}
+                  style={{ background: 'transparent' }}
+                />
+              </Button>
+            </Link>
           </S.MainInfoContent>
         </S.MainInfo>
         <S.MainBanner>
-          <S.Figure src="hulk.svg" width={280} />
+          <S.Figure src="hulk.svg" width={340} />
         </S.MainBanner>
       </Content>
     </S.Main>

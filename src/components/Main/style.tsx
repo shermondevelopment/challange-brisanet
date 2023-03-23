@@ -4,6 +4,7 @@ export const Main = styled.main`
   display: flex;
   justify-content: center;
   padding: 0 15px 0px 15px;
+  margin-top: 30px;
 `
 export const MainTitle = styled.h1`
   font-size: 50px;

@@ -14,6 +14,10 @@ const GlobalStyle = createGlobalStyle`
       background: var(--first-color);
       color: #fff;
    }
+
+   a {
+      text-decoration: none;
+   }
 `
 
 export default GlobalStyle

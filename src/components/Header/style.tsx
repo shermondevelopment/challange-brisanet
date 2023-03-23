@@ -4,7 +4,7 @@ export const Header = styled.header`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 20px 15px 20px 15px;
+  padding: 25px 15px 25px 15px;
 
   @media only screen and (max-width: 415px) {
     & .man-head {
@@ -16,7 +16,7 @@ export const HeaderFigure = styled.img``
 
 export const Content = styled.div`
   width: 100%;
-  max-width: 1020px;
+  max-width: 1160px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,6 +34,11 @@ export const HeaderMenu = styled.nav`
     transition: border 0.3s ease-in-out;
     border-bottom: 2px solid;
     border-color: transparent;
+    font-size: 18px;
+  }
+
+  &.mobile {
+    display: flex;
   }
 
   & a.active {
@@ -43,7 +48,6 @@ export const HeaderMenu = styled.nav`
 
   & a:hover {
     border-bottom: 2px solid;
-    border-width: 30%;
     border-color: #fff;
   }
 
