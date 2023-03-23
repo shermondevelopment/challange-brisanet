@@ -3,7 +3,6 @@ import Button from '../Button'
 
 /* icons */
 import { HiArrowSmRight } from 'react-icons/hi'
-import { FaArrowRight } from 'react-icons/fa'
 
 /* style of header */
 import { Content } from '../Header/style'

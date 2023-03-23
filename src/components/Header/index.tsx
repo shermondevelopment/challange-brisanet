@@ -1,14 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+/* icons */
+import { CgClose } from 'react-icons/cg'
 
 /* styled */
 import * as S from './style'
 
 const Header = () => {
+  const [menuMobile, setMenuMobile] = useState(false)
+
   return (
     <S.Header>
       <S.Content>
         <S.HeaderFigure src="marvel.svg" width={100} />
-        <S.HeaderMenu>
+        <S.HeaderMenu style={{ display: menuMobile ? 'flex' : 'none' }}>
+          <S.HeaderMenuClosed onClick={() => setMenuMobile(false)}>
+            <CgClose size={30} />
+          </S.HeaderMenuClosed>
           <ul>
             <li>
               <a href="#" className="active">
@@ -27,7 +35,7 @@ const Header = () => {
           </ul>
         </S.HeaderMenu>
         <S.HeaderFigure src="man.svg" width={40} className="man-head" />
-        <S.HeaderMenuBurguer>
+        <S.HeaderMenuBurguer onClick={() => setMenuMobile(!menuMobile)}>
           <S.BurguerLine />
         </S.HeaderMenuBurguer>
       </S.Content>

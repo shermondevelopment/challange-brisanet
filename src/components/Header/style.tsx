@@ -50,6 +50,21 @@ export const HeaderMenu = styled.nav`
   @media only screen and (max-width: 380px) {
     & {
       display: none;
+      position: absolute;
+      inset: 0;
+      z-index: 10;
+    }
+    & ul {
+      flex-direction: column;
+      width: 100%;
+      padding: 30px;
+      margin-top: 40px;
+    }
+    & ul > li {
+      margin-bottom: 20px;
+    }
+    & a {
+      font-size: 32px;
     }
   }
 `
@@ -92,4 +107,16 @@ export const BurguerLine = styled.div`
   height: 3px;
   background: #fff;
   border-radius: 8px;
+`
+export const HeaderMenuClosed = styled.div`
+  display: none;
+  position: absolute;
+
+  @media only screen and (max-width: 380px) {
+    & {
+      display: block;
+      top: 40px;
+      right: 40px;
+    }
+  }
 `
