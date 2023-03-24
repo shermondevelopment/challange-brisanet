@@ -30,6 +30,7 @@ interface ComicsType {
 
 const Commics: React.FC = (): React.ReactElement => {
   const [commics, setCommics] = useState<Array<ComicsType>>([])
+  const [commicSearch, setCommicSearch] = useState<string>('')
 
   const ammountCommicsWithDataOfApi = (commicApi: any) => {
     const commicsIterator = commicApi.map((item: any) => {
@@ -55,23 +56,21 @@ const Commics: React.FC = (): React.ReactElement => {
       time + import.meta.env.VITE_PRIVATE_KEY + import.meta.env.VITE_PUBLIC_KEY
     )
 
+    const ammountUrl = `https://gateway.marvel.com:443/v1/public/comics?limit=60&apikey=${
+      import.meta.env.VITE_PUBLIC_KEY
+    }&hash=${hash}${commicSearch != '' ? `&title=${commicSearch}` : ''}`
+
     try {
-      const { data } = await axios.get(
-        `https://gateway.marvel.com:443/v1/public/comics?limit=60&apikey=${
-          import.meta.env.VITE_PUBLIC_KEY
-        }&hash=${hash}`
-      )
+      const { data } = await axios.get(ammountUrl)
       ammountCommicsWithDataOfApi(data.data.results)
     } catch (error) {
       alert(error)
     }
   }
 
-  console.log(commics)
-
   useEffect(() => {
     fetchComics()
-  }, [])
+  }, [commicSearch])
 
   return (
     <>
@@ -80,7 +79,10 @@ const Commics: React.FC = (): React.ReactElement => {
       <Main>
         <S.ContentMain>
           <S.InputArea>
-            <InputSearch />
+            <InputSearch
+              commicSearch={commicSearch}
+              setCommicSearch={setCommicSearch}
+            />
           </S.InputArea>
           <S.CardsCommicsArea>
             {commics.map((item) => (

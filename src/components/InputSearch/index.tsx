@@ -6,7 +6,15 @@ import { BiSearch } from 'react-icons/bi'
 /* styles */
 import * as S from './style'
 
-const InputSearch: React.FC = (): React.ReactElement => {
+type PropInputSearch = {
+  commicSearch: string
+  setCommicSearch: React.Dispatch<React.SetStateAction<string>>
+}
+
+const InputSearch: React.FC<PropInputSearch> = ({
+  commicSearch,
+  setCommicSearch
+}): React.ReactElement => {
   return (
     <S.InputContainer>
       <S.InputIcon>
@@ -16,7 +24,11 @@ const InputSearch: React.FC = (): React.ReactElement => {
           fill="#d61511"
         />
       </S.InputIcon>
-      <S.InputSearch placeholder="Buscar commics...." />
+      <S.InputSearch
+        placeholder="Buscar commics...."
+        value={commicSearch}
+        onChange={(e) => setCommicSearch(e.currentTarget.value)}
+      />
     </S.InputContainer>
   )
 }
