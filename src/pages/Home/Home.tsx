@@ -1,8 +1,8 @@
 import React from 'react'
 
 /* components */
-import Header from '../components/Header'
-import Banner from '../components/Banner'
+import Header from '../../components/Header'
+import Banner from '../../components/Banner'
 
 const Home: React.FC = (): React.ReactElement => {
   return (
