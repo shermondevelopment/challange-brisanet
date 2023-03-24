@@ -1,7 +1,7 @@
 # <p align = "center"> Challange Brisanet - Front-End </p>
 
 <p align="center">
-   <img src="https://files.fm/thumb_show.php?i=uddfv9ge6" width="100%">
+   <img src="https://files.fm/thumb_show.php?i=t9syh986b"" width="100%">
 </p>
 
 ## Objective

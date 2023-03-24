@@ -22,12 +22,12 @@ const Banner: React.FC = (): React.ReactElement => {
         <S.BannerGroupTitle>
           <S.BannerInfoContent>
             <S.BannerTitle>
-              CHAME SE HEROI FAVORITO PARA SEU ENDEREÇO.
+              CHAME SEU HERÓI FAVORITO PARA SEU ENDEREÇO.
             </S.BannerTitle>
 
             <Link to="/commics">
               <Button type="submit">
-                Solicitar Heroi
+                Solicitar Herói
                 <HiArrowSmRight
                   size={25}
                   style={{ background: 'transparent' }}
