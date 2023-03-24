@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import * as S from './style'
 
@@ -10,12 +10,10 @@ import CardCommics from '../../components/CardCommics'
 import Modal from '../../components/Modal'
 
 const Commics: React.FC = (): React.ReactElement => {
-  const [openedModal, setOpenedModal] = useState(true)
-
   return (
     <>
       <Header />
-      <Modal opened={openedModal} setOpened={setOpenedModal} />
+      <Modal />
       <Main>
         <S.ContentMain>
           <S.InputArea>

@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+/* link */
+import { Link } from 'react-router-dom'
 
 /* icon */
 import { CgClose } from 'react-icons/cg'
@@ -6,18 +9,15 @@ import { CgClose } from 'react-icons/cg'
 /* style */
 import * as S from './style'
 
-interface ModalProps {
-  opened: boolean
-  setOpened: React.Dispatch<React.SetStateAction<boolean>>
-}
+/* context */
+import { ModalContext } from '../../context/ModalContext'
 
-const Modal: React.FC<ModalProps> = ({
-  opened,
-  setOpened
-}): React.ReactElement => {
+const Modal: React.FC = (): React.ReactElement => {
+  const { opened, setOpenedModal } = useContext(ModalContext)
+
   return (
     <S.Modal opened={opened}>
-      <S.CloseAreaAction onClick={() => setOpened(false)}>
+      <S.CloseAreaAction onClick={() => setOpenedModal(false)}>
         <CgClose size={22} />
       </S.CloseAreaAction>
       <S.ShowCardSelect>
@@ -42,7 +42,9 @@ const Modal: React.FC<ModalProps> = ({
               <span>R$ 10.20</span>
             </S.ShowCardDetails>
           </S.ShowCardInfo>
-          <S.ShowCardButton>Enviar Heroi</S.ShowCardButton>
+          <Link to="/maps" onClick={() => setOpenedModal(false)}>
+            <S.ShowCardButton>Enviar Heroi</S.ShowCardButton>
+          </Link>
         </S.ShowCardAreaDesc>
       </S.ShowCardSelect>
     </S.Modal>
