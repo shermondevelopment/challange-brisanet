@@ -95,7 +95,6 @@ const Maps = () => {
           >
             {pointers.map((item, indice) => {
               if (item.lat != null && item.lng != null) {
-                console.log('shermon', item)
                 return (
                   <Marker
                     key={indice}
