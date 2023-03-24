@@ -22,3 +22,9 @@ export const CardsCommicsArea = styled.div`
   justify-content: space-between;
   flex-wrap: wrap;
 `
+export const CommicLoadingArea = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+`

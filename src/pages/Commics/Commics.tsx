@@ -19,6 +19,9 @@ import md5 from 'md5'
 /* fns */
 import { format } from 'date-fns'
 
+/* loading */
+import ReactLoading from 'react-loading'
+
 interface ComicsType {
   id: number
   title: string
@@ -31,6 +34,7 @@ interface ComicsType {
 const Commics: React.FC = (): React.ReactElement => {
   const [commics, setCommics] = useState<Array<ComicsType>>([])
   const [commicSearch, setCommicSearch] = useState<string>('')
+  const [loading, setLoading] = useState(true)
 
   const ammountCommicsWithDataOfApi = (commicApi: any) => {
     const commicsIterator = commicApi.map((item: any) => {
@@ -61,10 +65,13 @@ const Commics: React.FC = (): React.ReactElement => {
     }&hash=${hash}${commicSearch != '' ? `&title=${commicSearch}` : ''}`
 
     try {
+      setLoading(true)
       const { data } = await axios.get(ammountUrl)
       ammountCommicsWithDataOfApi(data.data.results)
     } catch (error) {
       alert(error)
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -85,6 +92,11 @@ const Commics: React.FC = (): React.ReactElement => {
             />
           </S.InputArea>
           <S.CardsCommicsArea>
+            {loading && (
+              <S.CommicLoadingArea>
+                <ReactLoading type="spin" />
+              </S.CommicLoadingArea>
+            )}
             {commics.map((item) => (
               <CardCommics
                 id={item.id}
