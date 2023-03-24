@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import * as S from './style'
 
@@ -7,11 +7,15 @@ import Header from '../../components/Header'
 import Main from '../../components/Main'
 import InputSearch from '../../components/InputSearch'
 import CardCommics from '../../components/CardCommics'
+import Modal from '../../components/Modal'
 
 const Commics: React.FC = (): React.ReactElement => {
+  const [openedModal, setOpenedModal] = useState(true)
+
   return (
     <>
       <Header />
+      <Modal opened={openedModal} setOpened={setOpenedModal} />
       <Main>
         <S.ContentMain>
           <S.InputArea>

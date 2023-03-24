@@ -6,12 +6,15 @@ const GlobalStyle = createGlobalStyle`
    --first-color: #d61511;
   }
 
+  body {
+   background: var(--first-color);
+  }
+
    * {
       padding: 0;
       margin: 0;
       box-sizing: border-box;
       font-family: 'Bebas Neue', cursive;
-      background: var(--first-color);
       color: #fff;
    }
 
