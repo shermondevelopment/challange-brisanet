@@ -5,12 +5,15 @@ import GlobalStyle from '../styles/Global'
 
 /* context */
 import { ModalProvider } from './context/ModalContext'
+import { CommicProvider } from './context/Commic'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <GlobalStyle />
-    <ModalProvider>
-      <App />
-    </ModalProvider>
+    <CommicProvider>
+      <ModalProvider>
+        <App />
+      </ModalProvider>
+    </CommicProvider>
   </React.StrictMode>
 )

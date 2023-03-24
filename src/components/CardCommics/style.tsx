@@ -31,7 +31,7 @@ export const FigureMask = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  background: rgba(214, 21, 17, 0.6);
+  background: rgba(214, 21, 17, 0.5);
   padding: 20px 10px;
   font-size: 22px;
 `

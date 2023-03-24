@@ -13,6 +13,7 @@ export const Button = styled.button`
   justify-content: space-between;
   outline: transparent;
   transition: background 0.3s linear;
+  background: var(--first-color);
 
   &:hover,
   &:hover svg {

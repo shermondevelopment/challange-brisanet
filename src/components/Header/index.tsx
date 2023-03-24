@@ -12,8 +12,6 @@ import * as S from './style'
 const Header = () => {
   const path = useLocation()
 
-  console.log(path)
-
   const [menuMobile, setMenuMobile] = useState(false)
 
   return (

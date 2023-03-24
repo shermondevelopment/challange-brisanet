@@ -11,9 +11,11 @@ import * as S from './style'
 
 /* context */
 import { ModalContext } from '../../context/ModalContext'
+import { CommicContext } from '../../context/Commic'
 
 const Modal: React.FC = (): React.ReactElement => {
   const { opened, setOpenedModal } = useContext(ModalContext)
+  const { commic } = useContext(CommicContext)
 
   return (
     <S.Modal opened={opened}>
@@ -22,24 +24,19 @@ const Modal: React.FC = (): React.ReactElement => {
       </S.CloseAreaAction>
       <S.ShowCardSelect>
         <S.ShowCardAreaFigure>
-          <S.ShowCardFigure src="http://i.annihil.us/u/prod/marvel/i/mg/c/60/4bc69f11baf75/portrait_uncanny.jpg" />
+          <S.ShowCardFigure src={commic.image} />
         </S.ShowCardAreaFigure>
         <S.ShowCardAreaDesc>
-          <S.ShowCardTitle>Homem de Ferro</S.ShowCardTitle>
-          <S.ShowCardDescription>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam nisi
-            minus iste a ipsum officiis necessitatibus quod est consectetur sed.
-            Hic rem beatae labore sequi. Necessitatibus itaque laudantium
-            asperiores harum?
-          </S.ShowCardDescription>
+          <S.ShowCardTitle>{commic.title}</S.ShowCardTitle>
+          <S.ShowCardDescription>{commic.description}</S.ShowCardDescription>
           <S.ShowCardInfo>
             <S.ShowCardDetails>
               <span>Publicado</span>
-              <span>10/12/1999</span>
+              <span>{commic.date}</span>
             </S.ShowCardDetails>
             <S.ShowCardDetails>
               <span>Preço</span>
-              <span>R$ 10.20</span>
+              <span>{commic.price}</span>
             </S.ShowCardDetails>
           </S.ShowCardInfo>
           <Link to="/maps" onClick={() => setOpenedModal(false)}>
