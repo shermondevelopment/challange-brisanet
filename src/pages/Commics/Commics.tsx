@@ -68,8 +68,6 @@ const Commics: React.FC = (): React.ReactElement => {
     }&hash=${hash}${commicSearch != '' ? `&title=${commicSearch}` : ''}`
 
     try {
-      setLoading(true)
-      setCommics([])
       const { data } = await axios.get(ammountUrl)
       ammountCommicsWithDataOfApi(data.data.results)
     } catch (error) {
@@ -81,6 +79,8 @@ const Commics: React.FC = (): React.ReactElement => {
   }
 
   useEffect(() => {
+    setLoading(true)
+    setCommics([])
     if (timer) clearTimeout(timer)
     if (commicSearch != '') timer = setTimeout(fetchComics, 2000)
     if (!firstRender || commicSearch == '') fetchComics()
@@ -103,6 +103,11 @@ const Commics: React.FC = (): React.ReactElement => {
               <S.CommicLoadingArea>
                 <ReactLoading type="spin" />
               </S.CommicLoadingArea>
+            )}
+            {!loading && !commics.length && (
+              <S.CommitTitleNotFound>
+                Ops, 🥲🥲🥲 Não encontramos nenhum commic com esse titúlo!
+              </S.CommitTitleNotFound>
             )}
             {commics.map((item) => (
               <CardCommics

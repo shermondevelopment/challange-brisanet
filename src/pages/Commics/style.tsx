@@ -28,3 +28,8 @@ export const CommicLoadingArea = styled.div`
   justify-content: center;
   margin-top: 100px;
 `
+export const CommitTitleNotFound = styled.h3`
+  width: 100%;
+  text-align: center;
+  margin-top: 60px;
+`
