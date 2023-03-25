@@ -23,6 +23,12 @@ this challenge consists of listing all marvel comics and sending them to an addr
 - Axios
 - Responsiveness
 
+## deployed application address
+
+```
+https://moonlit-phoenix-b2e948.netlify.app/
+```
+
 ## 🏁 running the application
 
 ```
