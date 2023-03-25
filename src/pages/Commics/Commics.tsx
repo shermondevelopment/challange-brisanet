@@ -31,10 +31,13 @@ interface ComicsType {
   price: string
 }
 
+let timer: ReturnType<typeof setTimeout>
+
 const Commics: React.FC = (): React.ReactElement => {
   const [commics, setCommics] = useState<Array<ComicsType>>([])
   const [commicSearch, setCommicSearch] = useState<string>('')
   const [loading, setLoading] = useState(true)
+  const [firstRender, setFirstRender] = useState(false)
 
   const ammountCommicsWithDataOfApi = (commicApi: any) => {
     const commicsIterator = commicApi.map((item: any) => {
@@ -66,17 +69,21 @@ const Commics: React.FC = (): React.ReactElement => {
 
     try {
       setLoading(true)
+      setCommics([])
       const { data } = await axios.get(ammountUrl)
       ammountCommicsWithDataOfApi(data.data.results)
     } catch (error) {
       alert(error)
     } finally {
       setLoading(false)
+      setFirstRender(true)
     }
   }
 
   useEffect(() => {
-    fetchComics()
+    if (timer) clearTimeout(timer)
+    if (commicSearch != '') timer = setTimeout(fetchComics, 2000)
+    if (!firstRender || commicSearch == '') fetchComics()
   }, [commicSearch])
 
   return (
