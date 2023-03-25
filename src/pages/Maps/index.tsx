@@ -53,9 +53,7 @@ const Maps = () => {
 
   const loadLocation = () => {
     if (navigator.geolocation) {
-      console.log(
-        navigator.geolocation.getCurrentPosition(showPosition, posError)
-      )
+      navigator.geolocation.getCurrentPosition(showPosition, posError)
     } else {
       alert('Sorry, Geolocation is not supported by this browser.') // Alert is browser does not support geolocation
     }
