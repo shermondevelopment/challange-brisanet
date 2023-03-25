@@ -22,6 +22,8 @@ export const Content = styled.div`
   align-items: center;
 `
 export const HeaderMenu = styled.nav`
+  background: var(--first-color);
+
   & ul {
     display: flex;
   }
