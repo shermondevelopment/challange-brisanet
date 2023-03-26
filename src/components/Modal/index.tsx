@@ -28,7 +28,9 @@ const Modal: React.FC = (): React.ReactElement => {
         </S.ShowCardAreaFigure>
         <S.ShowCardAreaDesc>
           <S.ShowCardTitle>{commic.title}</S.ShowCardTitle>
-          <S.ShowCardDescription>{commic.description}</S.ShowCardDescription>
+          <S.ShowCardDescription>
+            {commic.description?.substring(0, 195)}
+          </S.ShowCardDescription>
           <S.ShowCardInfo>
             <S.ShowCardDetails>
               <span>Publicado</span>
