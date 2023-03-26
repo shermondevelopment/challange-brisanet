@@ -12,6 +12,13 @@ export const CardSection = styled.section`
   cursor: pointer;
   margin-right: 15px;
   margin-bottom: 25px;
+
+  @media only screen and (max-width: 415px) {
+    & {
+      max-width: none;
+      margin-right: 0px;
+    }
+  }
 `
 export const CardFigure = styled.img`
   width: 100%;
@@ -19,6 +26,12 @@ export const CardFigure = styled.img`
   object-fit: contain;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+
+  @media only screen and (max-width: 415px) {
+    & {
+      object-fit: cover;
+    }
+  }
 `
 export const AreaFigure = styled.div`
   width: 100%;
